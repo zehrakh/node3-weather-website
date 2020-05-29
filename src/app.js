@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast.js')
 var cors = require('cors')
 
 const app = express()
+const port = process.env.PORT || 3000
 app.use(cors()) // Use this after the variable declaration
 
 //Define paths for express config
@@ -106,8 +107,8 @@ app.get('*',(req,res) => {
 })
 
 //Starting Server at a Development Port
-app.listen(3000,() => {
-    console.log('Server is running at port 3000')
+app.listen(port,() => {
+    console.log('Server is running at port ' + port)
 })
 
 
